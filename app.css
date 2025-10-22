@@ -1,48 +1,67 @@
+/* Reset and basic styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f7fb;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #fdf6e3;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
+  color: #333;
 }
 
 .app {
-  background-color: white;
-  padding: 20px;
+  background-color: #ffffff;
+  padding: 25px;
   margin-top: 50px;
   width: 100%;
   max-width: 500px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   text-align: center;
+  font-weight: 700;
+  color: #2c3e50;
 }
 
+/* Form styles */
 .todo-form {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .todo-form input {
   flex: 1;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #ecf0f1;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.todo-form input:focus {
+  border-color: #3498db;
 }
 
 .todo-form button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   margin-left: 10px;
   border: none;
-  background-color: #4f46e5;
-  color: white;
-  border-radius: 5px;
+  background-color: #e67e22;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
+.todo-form button:hover {
+  background-color: #d35400;
+}
+
+/* Task list */
 .todo-list {
   list-style: none;
   padding: 0;
@@ -52,24 +71,61 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #eee;
+  padding: 12px 10px;
+  border-bottom: 1px solid #ecf0f1;
+  transition: background-color 0.2s;
+}
+
+.todo-item:hover {
+  background-color: #f1f1f1;
 }
 
 .task-text.completed {
   text-decoration: line-through;
-  color: #888;
+  color: #95a5a6;
+  font-style: italic;
 }
 
 .remove-btn {
   background: transparent;
   border: none;
-  color: #ef4444;
+  color: #c0392b;
+  font-size: 18px;
   cursor: pointer;
 }
 
+.remove-btn:hover {
+  color: #e74c3c;
+}
+
+/* Footer */
 .footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+#clear-completed {
+  background: #3498db;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+#clear-completed:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .todo-form button {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
 }
